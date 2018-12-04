@@ -17,6 +17,7 @@ Wire each LED Ground to a GPIO Pin.
 Wire all LEDs Positive to +5V, all LEDs will share this 5v rail.
 
 When GPIO is HIGH, LED is off
+
 When GPIO is LOW, LED is on
 
 Arcade button switch:
