@@ -73,6 +73,8 @@ function flashyflash($led,$speed = 10, $length = 5){ // flashes the LED indicato
 }
 
 function trigger($pin,$ms,$led){ // simulates a button press
+	GLOBAL $LEDspeed;
+	GLOBAL $LEDlength;
 	flashyflash($led,$LEDspeed, $LEDlength); // flash LEDs before triggering relay
 	if (@!$_GET['debug']) {
 		wiringpi("write",$pin,1); // press relay
