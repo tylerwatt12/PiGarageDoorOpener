@@ -11,7 +11,7 @@ Built for Raspbian, Apache, PHP, and WiringPi
 - Designed for active high relays
 - Has debugging functions by passing &addtlInfo=1
 
-USAGE:
+SETUP:
 LED Arcade button (4 lead style) https://www.adafruit.com/product/3489
 Wire each LED Ground to a GPIO Pin.
 Wire all LEDs Positive to +5V, all LEDs will share this 5v rail.
@@ -36,5 +36,15 @@ sudo apt-get install wiringpi
 sudo apt install libapache2-mod-php
 
 ....
-
 move index.php to /var/www/html
+
+
+USAGE:
+
+Access it from your network by typing in the Pi's IP Address into a web browser.
+
+index.php?trigger=1 (triggers relay 1)
+index.php?trigger=1&debug=1 (doesn't trigger relay 1, but acts like it did)
+index.php?addtlInfo=1 (Displays debugging info for CPU,mem,disk,wifi,net,system)
+
+
