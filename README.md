@@ -11,9 +11,12 @@ Built for Raspbian, Apache, PHP, and WiringPi
 - Designed for active high relays
 - Has debugging functions by passing &addtlInfo=1
 
-SETUP:
-LED Arcade button (4 lead style) https://www.adafruit.com/product/3489
+*SETUP:*
+
+*LED Arcade button (4 lead style) https://www.adafruit.com/product/3489*
+
 Wire each LED Ground to a GPIO Pin.
+
 Wire all LEDs Positive to +5V, all LEDs will share this 5v rail.
 
 When GPIO is HIGH, LED is off
@@ -21,31 +24,32 @@ When GPIO is HIGH, LED is off
 When GPIO is LOW, LED is on
 
 Arcade button switch:
-Either Switch Pin: Wire to INput on Relay board module
-Either Switch Pin: Wire to +5V GPIO on either raspberry pi, or Relay board module
+- Either Switch Pin: Wire to INput on Relay board module
+- Either Switch Pin: Wire to +5V GPIO on either raspberry pi, or Relay board module
 
 When button is pressed, a mechanical circuit causes the relay to trigger. The raspberry pi does NOT know when these are pressed.
 
-Relay Board Module https://amzn.to/2UboCal
-DC+ to GPIO +5V
-DC- to GPIO GND
-IN1 to a GPIO pin(configurable)
-IN2 to a GPIO pin(configurable)
+*Relay Board Module https://amzn.to/2UboCal*
 
-sudo apt-get update
-sudo apt-get install wiringpi
-sudo apt install libapache2-mod-php
+- DC+ to GPIO +5V
+- DC- to GPIO GND
+- IN1 to a GPIO pin(configurable)
+- IN2 to a GPIO pin(configurable)
 
-....
-move index.php to /var/www/html
+   sudo apt-get update
+   sudo apt-get install wiringpi
+   sudo apt install libapache2-mod-php
+
+   ....
+   move index.php to /var/www/html
 
 
 USAGE:
 
 Access it from your network by typing in the Pi's IP Address into a web browser.
 
-index.php?trigger=1 (triggers relay 1)
-index.php?trigger=1&debug=1 (doesn't trigger relay 1, but acts like it did)
-index.php?addtlInfo=1 (Displays debugging info for CPU,mem,disk,wifi,net,system)
+   index.php?trigger=1 (triggers relay 1)
+   index.php?trigger=1&debug=1 (doesn't trigger relay 1, but acts like it did)
+   index.php?addtlInfo=1 (Displays debugging info for CPU,mem,disk,wifi,net,system)
 
 
